@@ -2,7 +2,7 @@ function dropdownFunction() {
   const arrowIcon = document.querySelector("#arrow-icon");
   const contentItems = document.querySelector("#content-items-dropdown");
   const contenedor = document.querySelector(".content-dropdown");
-  const listItems = Array.from(document.querySelectorAll(".list-item"));
+  const listItems = document.querySelector(".list-item");
   const subList = document.querySelector(".sub-list");
 
   // console.log(listItems);
@@ -21,16 +21,14 @@ function dropdownFunction() {
   });
 
   //Evento para los sub menu
-  listItems.forEach((listItem) => {
-    listItem.addEventListener("mouseover", () => {
-      // console.log("Click al item");
-      subList.classList.remove("unactive");
-    });
+  listItems.addEventListener("mouseover", () => {
+    // console.log("Click al item");
+    subList.classList.remove("unactive");
+  });
 
-    listItem.addEventListener("mouseout", () => {
-      // console.log("Click al item");
-      subList.classList.add("unactive");
-    });
+  listItems.addEventListener("mouseout", () => {
+    // console.log("Click al item");
+    subList.classList.add("unactive");
   });
 
   subList.addEventListener("mouseover", () => {
