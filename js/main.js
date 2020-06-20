@@ -22,13 +22,14 @@ function dropdownFunction() {
 
   //Evento para los sub menu
   listItems.forEach((listItem) => {
-    listItem.addEventListener("click", () => {
+    listItem.addEventListener("mouseover", () => {
       // console.log("Click al item");
-      if (subList.className == "sub-list unactive") {
-        subList.classList.remove("unactive");
-      } else {
-        subList.classList.add("unactive");
-      }
+      subList.classList.remove("unactive");
+    });
+
+    listItem.addEventListener("mouseout", () => {
+      // console.log("Click al item");
+      subList.classList.add("unactive");
     });
   });
 
